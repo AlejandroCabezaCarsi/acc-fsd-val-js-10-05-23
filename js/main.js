@@ -6,10 +6,10 @@ console.log('Hola mundo');
 let userDef = 'admin';
 let passwordDef = '1234'; 
 
-let user = '';
-let password = null;
+// let user = '';
+// let password = null;
 
-let contador = 3;
+// let contador = 3;
 
 //2- pedir user y password 
 
@@ -19,28 +19,69 @@ let contador = 3;
 // si no está ok --> mensaje de error + resta de intentos (max-3)
 
             //Si intentos > max --> bloquea (mensaje)
+            // si no está ok --> mensaje de error + resta de intentos (max-3)
 
-            do {
+            //Si intentos > max --> bloquea (mensaje)
 
-                user = prompt('Introduce tu nombre de usuario'); 
-                password = prompt('Introduce la contrasenya');
+            const login = (userDef='admin', passwordDef='1234') => {
 
-                if (userDef == user && passwordDef == password){
-                    console.log('login ok');
-                    alert('Bienvenido')
-                    break; 
+            
 
-                }else{
-                    console.log('login erroneo')
-                    contador--;
-                    alert(`Login erroneo, te quedan ${contador}`);
-                    if (contador == 0){ 
-                        alert('Numero de intentos agotado');
+                let user = '';
+                let password = null;
+
+                let contador = 3;
+
+
+                do {
+
+                    user = prompt('Introduce tu nombre de usuario'); 
+                    password = prompt('Introduce la contrasenya');
+    
+                    if (userDef == user && passwordDef == password){
+                        console.log('login ok');
+                        alert('Bienvenido');
+                        break; 
+    
+                    }else{
+                        console.log('login erroneo');
+                        contador--;
+                        alert(`Login erroneo, te quedan ${contador}`);
+                        if (contador == 0){ 
+                            alert('Numero de intentos agotado');
+                        }
                     }
-                }
+    
+    
+                } while (contador != 0);
+
+            };
 
 
-            } while (contador != 0);
+            login(); 
+
+
+            // do {
+
+            //     user = prompt('Introduce tu nombre de usuario'); 
+            //     password = prompt('Introduce la contrasenya');
+
+            //     if (userDef == user && passwordDef == password){
+            //         console.log('login ok');
+            //         alert('Bienvenido')
+            //         break; 
+
+            //     }else{
+            //         console.log('login erroneo')
+            //         contador--;
+            //         alert(`Login erroneo, te quedan ${contador}`);
+            //         if (contador == 0){ 
+            //             alert('Numero de intentos agotado');
+            //         }
+            //     }
+
+
+            // } while (contador != 0);
 
                 
         // si no está ok --> mensaje de error + resta de intentos (max-3)
